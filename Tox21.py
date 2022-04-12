@@ -254,7 +254,7 @@ elif prediction:
     # Drop columns that are highly correlated (>0.97)
      drop_columns=['MaxAbsEStateIndex', 'HeavyAtomMolWt', 'ExactMolWt', 'BertzCT', 'Chi0n', 'Chi0v', 'Chi1', 'Chi1n', 'Chi3n', 'Chi4n', 'LabuteASA', 'EState_VSA1', 'VSA_EState1', 'HeavyAtomCount', 'NumHDonors', 'MolMR', 'fr_COO2', 'fr_Nhpyrrole', 'fr_benzene', 'fr_phenol', 'fr_phenol_noOrthoHbond']
 
-      combined_test_descriptors = combined_test_descriptors.drop(columns=drop_columns,inplace=True)
+     combined_test_descriptors = combined_test_descriptors.drop(columns=drop_columns,inplace=True)
     
     #======== The data was standardized using standard scaler
      test_scaled = scaler.transform(combined_test_descriptors)
