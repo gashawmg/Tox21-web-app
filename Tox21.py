@@ -292,12 +292,12 @@ elif prediction:
 
     #======= Display output with structure in table form
     # reference:https://github.com/dataprofessor/drugdiscovery
-     raw_html = mols2grid.display(df3,
-                            #subset=["Name", "img"],
-                            subset=['img', 'Predicted','Predicted Property'],
-                            n_cols=5, n_rows=3,
-                            tooltip = ['Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
-     components.html(raw_html,width=900, height=900, scrolling=False)
+#      raw_html = mols2grid.display(df3,
+#                             #subset=["Name", "img"],
+#                             subset=['img', 'Predicted','Predicted Property'],
+#                             n_cols=5, n_rows=3,
+#                             tooltip = ['Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
+#      components.html(raw_html,width=900, height=900, scrolling=False)
 
 else:
     st.markdown('<h5 style="border: 2px solid #4908d4;     border-radius:10px;border-radius:20px;padding: 3%;text-align:center"> If you want to test this model,  please use the sidebar. If you have few molecules, you can directly put the SMILES in a single or double quotation separated by comma in the sidebar. If you have many molecules, you can put their SMILES strings in a <mark>"SMILES" </mark>column, upload them and click the button which says "Predict ToXicity of Moleclues" shown in the sidebar.</h5>',unsafe_allow_html=True)
