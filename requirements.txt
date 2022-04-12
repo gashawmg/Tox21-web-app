@@ -8,5 +8,5 @@ mols2grid==0.2.2
 scikit_learn==0.23.1
 seaborn==0.11.2
 streamlit==1.5.1
-xgboost==1.5.2
+xgboost==1.1.1
 click==7.1.2
