@@ -9,4 +9,3 @@ scikit_learn==0.23.1
 seaborn==0.11.2
 streamlit==1.8.1
 xgboost==1.1.1
-xorg_libxrender==0.9.10
