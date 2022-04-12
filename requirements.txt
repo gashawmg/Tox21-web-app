@@ -1,11 +1,11 @@
-lightgbm==3.3.2
+lightgbm==2.3.1
 matplotlib==3.4.3
 mols2grid==0.2.2
 numpy==1.19.1
 pandas==1.3.4
 Pillow==9.1.0
 rdkit-pypi==2021.9.4
-scikit_learn==1.0.2
+scikit_learn==0.23.1
 seaborn==0.11.2
 streamlit==1.5.1
 xgboost==1.5.2
