@@ -101,7 +101,7 @@ plt.show()
 st.pyplot(plt)
 st.markdown('Figure 2. True Positive vs False Positive rate at different classification thresholds of light GBM classifier and XG Boost classifier on the 472 test dataset.')
 # plot test data on grid
-st.markdown('<h3 style="border: 2px solid #4908d4;border-radius:10px;border-radius:20px;padding: 3%;text-align:center">  Each grid box contains the <i>structure of a compound, actual and predicted toxicity </i></h3>',unsafe_allow_html=True)
+# st.markdown('<h3 style="border: 2px solid #4908d4;border-radius:10px;border-radius:20px;padding: 3%;text-align:center">  Each grid box contains the <i>structure of a compound, actual and predicted toxicity </i></h3>',unsafe_allow_html=True)
 # test_data = mols2grid.display(test,
 #                             subset=['img', 'Actual Property','Predicted Property'],
 #                             style={"Actual Property": lambda x: "color: red; font-weight: bold;" if x =='Toxic' else ""},
