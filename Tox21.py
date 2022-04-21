@@ -106,8 +106,6 @@ test_data = mols2grid.display(test,
                             subset=['img', 'Actual Property','Predicted Property'],
                             style={"Actual Property": lambda x: "color: red; font-weight: bold;" if x =='Toxic' else ""},
                              n_cols=5, n_rows=3,
-                             
-   
                             tooltip = ['Actual Property','Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
 components.html(test_data,height = 600,width=900, scrolling=False)
 # ============ User input
