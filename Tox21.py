@@ -18,7 +18,7 @@ from rdkit.Chem import Descriptors
 from rdkit.Chem import rdMolDescriptors 
 from rdkit.ML.Descriptors import MoleculeDescriptors
 from rdkit.Avalon import pyAvalonTools
-#import mols2grid
+import mols2grid
 import streamlit as st
 import streamlit.components.v1 as components
 import pickle
@@ -102,12 +102,14 @@ st.pyplot(plt)
 st.markdown('Figure 2. True Positive vs False Positive rate at different classification thresholds of light GBM classifier and XG Boost classifier on the 472 test dataset.')
 # plot test data on grid
 st.markdown('<h3 style="border: 2px solid #4908d4;border-radius:10px;border-radius:20px;padding: 3%;text-align:center">  Each grid box contains the <i>structure of a compound, actual and predicted toxicity </i></h3>',unsafe_allow_html=True)
-# test_data = mols2grid.display(test,
-#                             subset=['img', 'Actual Property','Predicted Property'],
-#                             style={"Actual Property": lambda x: "color: red; font-weight: bold;" if x =='Toxic' else ""},
-#                              n_cols=5, n_rows=3,
-#                             tooltip = ['Actual Property','Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
-# components.html(test_data,height = 600,width=900, scrolling=False)
+test_data = mols2grid.display(test,
+                            subset=['img', 'Actual Property','Predicted Property'],
+                            style={"Actual Property": lambda x: "color: red; font-weight: bold;" if x =='Toxic' else ""},
+                             n_cols=5, n_rows=3,
+                             
+   
+                            tooltip = ['Actual Property','Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
+components.html(test_data,height = 600,width=900, scrolling=False)
 # ============ User input
 data = st.sidebar.text_input('Enter SMILE Strings in single or double quotation separated by comma:',"['CCCCO']")
 st.sidebar.markdown('''`or upload SMILE strings in CSV format, note that SMILE strings of the molecules should be in 'SMILES' column:`''')
@@ -220,12 +222,12 @@ if data!= "['CCCCO']":
     st.sidebar.markdown('''## See your output in the following table:''')
     #======= Display output with structure in table form
     # reference:https://github.com/dataprofessor/drugdiscovery
-#     raw_html = mols2grid.display(df1,
-#                             #subset=["Name", "img"],
-#                             subset=['img', 'Predicted','Predicted Property'],
-#                             n_cols=5, n_rows=3,
-#                             tooltip = ['Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
-#     components.html(raw_html, width=900, height=900, scrolling=False)
+    raw_html = mols2grid.display(df1,
+                            #subset=["Name", "img"],
+                            subset=['img', 'Predicted Property'],
+                            n_cols=5, n_rows=3,
+                            tooltip = ['Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
+    components.html(raw_html, width=900, height=900, scrolling=False)
 
     #======= show CSV file attachment
     st.sidebar.markdown(filedownload(df1,"predicted_toxicity.csv"),unsafe_allow_html=True)
@@ -290,13 +292,13 @@ elif prediction:
 
     #======= Display output with structure in table form
     # reference:https://github.com/dataprofessor/drugdiscovery
-#      raw_html = mols2grid.display(df3,
-#                             #subset=["Name", "img"],
-#                             subset=['img', 'Predicted','Predicted Property'],
-#                             n_cols=5, n_rows=3,
-#                             tooltip = ['Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
-#      components.html(raw_html,width=900, height=900, scrolling=False)
+     raw_html = mols2grid.display(df3,
+                            #subset=["Name", "img"],
+                            subset=['img', 'Predicted Property'],
+                            n_cols=5, n_rows=3,
+                            tooltip = ['Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
+     components.html(raw_html,width=900, height=900, scrolling=False)
 
 else:
-    st.markdown('<h5 style="border: 2px solid #4908d4;     border-radius:10px;border-radius:20px;padding: 3%;text-align:center"> If you want to test this model,  please use the sidebar. If you have few molecules, you can directly put the SMILES in a single or double quotation separated by comma in the sidebar. If you have many molecules, you can put their SMILES strings in a <mark>"SMILES" </mark>column, upload them and click the button which says "Predict ToXicity of Moleclues" shown in the sidebar.</h5>',unsafe_allow_html=True)
+    st.markdown('<div style="border: 2px solid #4908d4;border-radius:20px;padding: 3%;text-align:center"><h5> If you want to test this model,  please use the sidebar. If you have few molecules, you can directly put the SMILES in a single or double quotation separated by comma in the sidebar. If you have many molecules, you can put their SMILES strings in a "SMILES" column, upload them and click the button which says "Predict Toxicity of Moleclues" shown in the sidebar.</h5> <h5 style="color:white;background-color:red;border-radius:10px;padding: 3%;opacity: 0.7;">Please also note that predcition is more reliable if the compounds to be predicted are similar with training data</h5></div>',unsafe_allow_html=True)
    
