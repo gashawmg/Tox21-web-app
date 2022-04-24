@@ -50,7 +50,7 @@ st.set_page_config(page_title='Toxicity Prediction App',layout='wide')
 st.sidebar.markdown('<h2 style="color:white;background-image: linear-gradient(to right, red , green);padding: 3%;border-radius:20px;text-align:center"> Use this Sidebar for Toxicity Prediction </h2>',unsafe_allow_html=True)
 
 
-st.markdown('<h3 style="color:white;background-color:#024d1c;border-radius:20px;padding: 2%;text-align:center"> Web Application for Compound Toxicity Prediction </h3>',unsafe_allow_html=True)
+st.markdown('<h3 style="color:white;background-color:#ff051a;border-radius:20px;padding: 2%;text-align:center"> Web Application for Compound Toxicity Prediction </h3>',unsafe_allow_html=True)
 #---------- Display my linkedin page on the sidebar and main page
 st.markdown("""[Gashaw M.Goshu](https://www.linkedin.com/in/gashaw-m-goshu/), Ph.D in Organic Chemistry""")
 
