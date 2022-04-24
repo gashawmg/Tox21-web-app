@@ -185,6 +185,7 @@ if data!= "['CCCCO']":
     test_X = np.array(test_Avalon_fps,dtype=float)
     df_test_Av_X = pd.DataFrame(test_X,columns =["Av{}".format(i) for i in range(1,513)])
     combined_test_descriptors = pd.concat([Dataset_with_200_descriptors,df_test_Av_X],axis=1)
+    st.write(combined_test_descriptors)
    
 
     # Drop columns that are highly correlated (>0.97)
