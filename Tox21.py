@@ -119,7 +119,7 @@ multi_data = st.sidebar.file_uploader("=====================================")
 st.sidebar.markdown("""**If you upload your CSV file, click the button below to get the toxicity prediction** """)
 prediction = st.sidebar.button('Predict Toxicity of Molecules')
 
-#=========== custom style for button
+#=========== custom style for submit button
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
