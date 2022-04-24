@@ -185,14 +185,14 @@ if data!= "['CCCCO']":
     test_X = np.array(test_Avalon_fps,dtype=float)
     df_test_Av_X = pd.DataFrame(test_X,columns =["Av{}".format(i) for i in range(1,513)])
     combined_test_descriptors = pd.concat([Dataset_with_200_descriptors,df_test_Av_X],axis=1)
-    st.write(combined_test_descriptors)
+   
    
 
     # Drop columns that are highly correlated (>0.97)
     drop_columns=['MaxAbsEStateIndex', 'HeavyAtomMolWt', 'ExactMolWt', 'BertzCT', 'Chi0n', 'Chi0v', 'Chi1', 'Chi1n', 'Chi3n', 'Chi4n', 'LabuteASA', 'EState_VSA1', 'VSA_EState1', 'HeavyAtomCount', 'NumHDonors', 'MolMR', 'fr_COO2', 'fr_Nhpyrrole', 'fr_benzene', 'fr_phenol', 'fr_phenol_noOrthoHbond']
 
     combined_test_descriptors.drop(columns=drop_columns,inplace=True)
-      
+    st.write(combined_test_descriptors.shape)
     #======== The data was standardized using standard scaler
     test_scaled = scaler.transform(combined_test_descriptors)
    
