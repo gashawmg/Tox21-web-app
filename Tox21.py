@@ -222,7 +222,7 @@ if data!= "['CCCCO']":
        'fr_sulfone', 'fr_term_acetylene', 'fr_tetrazole', 'fr_thiazole',
        'fr_thiocyan', 'fr_thiophene', 'fr_unbrch_alkane', 'fr_urea']
 #     Dataset_with_200_descriptors.drop(columns=['MaxPartialCharge','MinPartialCharge','MaxAbsPartialCharge','MinAbsPartialCharge'],inplace=True)
-      Dataset_with_200_descriptors = Dataset_with_200_descriptors[descriptors_196]
+     Dataset_with_200_descriptors = Dataset_with_200_descriptors[descriptors_196]
  
      # for each random split, calculate Avalon fingerprints for test set
     test_Avalon_fps = []
