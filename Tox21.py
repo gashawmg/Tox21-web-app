@@ -289,8 +289,10 @@ elif prediction:
      Mol_descriptors,desc_names = calc_rdkit2d_descriptors(df2['SMILES'])
      Dataset_with_200_descriptors = pd.DataFrame(Mol_descriptors,columns=desc_names)
      #========= Use only the 196 descriptors listed above
+     Dataset_with_200_descriptors = Dataset_with_200_descriptors[descriptors_196]
     
-     X_test = Dataset_with_200_descriptors.drop(columns=['MaxPartialCharge','MinPartialCharge','MaxAbsPartialCharge','MinAbsPartialCharge'],inplace=True)
+     X_test = Dataset_with_200_descriptors
+     #Dataset_with_200_descriptors.drop(columns=['MaxPartialCharge','MinPartialCharge','MaxAbsPartialCharge','MinAbsPartialCharge'],inplace=True)
      test_Avalon_fps = []
      for i in df2['SMILES']:
         mol = Chem.MolFromSmiles(i) 
