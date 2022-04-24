@@ -18,7 +18,7 @@ from rdkit.Chem import Descriptors
 from rdkit.Chem import rdMolDescriptors 
 from rdkit.ML.Descriptors import MoleculeDescriptors
 from rdkit.Avalon import pyAvalonTools
-# import mols2grid
+import mols2grid
 import streamlit as st
 import streamlit.components.v1 as components
 import pickle
@@ -101,15 +101,15 @@ plt.show()
 st.pyplot(plt)
 st.markdown('Figure 2. True Positive vs False Positive rate at different classification thresholds of light GBM classifier and XG Boost classifier on the 472 test dataset.')
 # plot test data on grid
-# st.markdown('<h3 style="border: 2px solid #4908d4;border-radius:10px;border-radius:20px;padding: 3%;text-align:center">  Each grid box contains the <i>structure of a compound, actual and predicted toxicity </i></h3>',unsafe_allow_html=True)
-# test_data = mols2grid.display(test,
-#                             subset=['img', 'Actual Property','Predicted Property'],
-#                             style={"Actual Property": lambda x: "color: red; font-weight: bold;" if x =='Toxic' else ""},
-#                              n_cols=5, n_rows=3,
+st.markdown('<h3 style="border: 2px solid #4908d4;border-radius:10px;border-radius:20px;padding: 3%;text-align:center">  Each grid box contains the <i>structure of a compound, actual and predicted toxicity </i></h3>',unsafe_allow_html=True)
+test_data = mols2grid.display(test,
+                            subset=['img', 'Actual Property','Predicted Property'],
+                            style={"Actual Property": lambda x: "color: red; font-weight: bold;" if x =='Toxic' else ""},
+                             n_cols=5, n_rows=3,
                              
    
-#                             tooltip = ['Actual Property','Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
-# components.html(test_data,height = 600,width=900, scrolling=False)
+                            tooltip = ['Actual Property','Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
+components.html(test_data,height = 600,width=900, scrolling=False)
 
 # ============ User input
 data = st.sidebar.text_input('Enter SMILE Strings in single or double quotation separated by comma:',"['CCCCO']")
