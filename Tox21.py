@@ -110,6 +110,7 @@ st.markdown('Figure 2. True Positive vs False Positive rate at different classif
    
 #                             tooltip = ['Actual Property','Predicted Property'],fixedBondLength=25, clearBackground=False)._repr_html_()
 # components.html(test_data,height = 600,width=900, scrolling=False)
+
 # ============ User input
 data = st.sidebar.text_input('Enter SMILE Strings in single or double quotation separated by comma:',"['CCCCO']")
 st.sidebar.markdown('''`or upload SMILE strings in CSV format, note that SMILE strings of the molecules should be in 'SMILES' column:`''')
@@ -117,6 +118,8 @@ multi_data = st.sidebar.file_uploader("=====================================")
 
 st.sidebar.markdown("""**If you upload your CSV file, click the button below to get the toxicity prediction** """)
 prediction = st.sidebar.button('Predict Toxicity of Molecules')
+
+#=========== custom style for button
 m = st.markdown("""
 <style>
 div.stButton > button:first-child {
@@ -124,6 +127,8 @@ div.stButton > button:first-child {
     border-radius:10px;
 }
 </style>""", unsafe_allow_html=True)
+
+#=========== Use these 196 molecular descriptors
 descriptors_196 = ['MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex',
        'MinAbsEStateIndex', 'qed', 'MolWt', 'HeavyAtomMolWt',
        'ExactMolWt', 'NumValenceElectrons', 'NumRadicalElectrons',
@@ -172,7 +177,8 @@ descriptors_196 = ['MaxEStateIndex', 'MinEStateIndex', 'MaxAbsEStateIndex',
        'fr_pyridine', 'fr_quatN', 'fr_sulfide', 'fr_sulfonamd',
        'fr_sulfone', 'fr_term_acetylene', 'fr_tetrazole', 'fr_thiazole',
        'fr_thiocyan', 'fr_thiophene', 'fr_unbrch_alkane', 'fr_urea']
-# Remove salts from smiles
+
+#============= Remove salts from smiles
 def remove_salt(smile):
     from rdkit.Chem.SaltRemover import SaltRemover
     try:
@@ -339,7 +345,7 @@ elif prediction:
     #======= show CSV file attachment
      st.sidebar.markdown('''## See your output in the following table:''')
      st.sidebar.markdown(filedownload(df3,"predicted_toxicity.csv"),unsafe_allow_html=True)
-     st.markdown('''## See the output shown below:''')
+   # st.markdown('''## See the output shown below:''')
 
     #======= Display output with structure in table form
     # reference:https://github.com/dataprofessor/drugdiscovery
