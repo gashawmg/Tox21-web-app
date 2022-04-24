@@ -343,7 +343,6 @@ elif prediction:
      st.sidebar.write(df3)
 
     #======= show CSV file attachment
-     st.sidebar.markdown('''## See your output in the following table:''')
      st.sidebar.markdown(filedownload(df3,"predicted_toxicity.csv"),unsafe_allow_html=True)
    # st.markdown('''## See the output shown below:''')
 
