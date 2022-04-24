@@ -1,1 +1,1 @@
-This web app was developed by training [Tox21 data](http://bioinf.jku.at/research/DeepTox/tox21.html) and it is expected to predict the toxcity of similar molecules with 77% accuracy.You can [click here](https://tox21.herokuapp.com/) to prediction.
+This web app was developed by training [Tox21 data](http://bioinf.jku.at/research/DeepTox/tox21.html) and it is expected to predict the toxcity of similar molecules with 77% accuracy.You can [click here](https://share.streamlit.io/gashawmg/tox21-web-app/main/Tox21.py) to prediction.
