@@ -187,8 +187,8 @@ def remove_salt(smile):
         res = remover.StripMol(mol)
         smi = Chem.MolToSmiles(res)
         return smi
-    except:
-        pass    
+    except ValueError:
+        print("Oops! That was not a valid SMILES.")    
 
 # ================= Get the names of the 200 descriptors from RDKit
 def calc_rdkit2d_descriptors(smiles):
