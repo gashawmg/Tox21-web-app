@@ -18,7 +18,7 @@ from rdkit.Chem import Descriptors
 from rdkit.Chem import rdMolDescriptors 
 from rdkit.ML.Descriptors import MoleculeDescriptors
 from rdkit.Avalon import pyAvalonTools
-# import mols2grid
+import mols2grid
 import streamlit as st
 import streamlit.components.v1 as components
 import pickle
