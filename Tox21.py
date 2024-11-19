@@ -1,7 +1,4 @@
 # import the necessary libraries
-
-from distutils.command.upload import upload
-from pyexpat import model
 import numpy as np
 import pandas as pd
 import xgboost
