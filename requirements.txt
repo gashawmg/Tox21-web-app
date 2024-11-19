@@ -9,5 +9,5 @@ mols2grid==2.0.0
 pandas==1.5.0
 Pillow==10.0.0
 seaborn==0.11.2
-xgboost==2.0.1
+xgboost==2.1.2
 lightgbm==4.1.0
